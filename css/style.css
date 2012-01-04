@@ -1,0 +1,40 @@
+div.flash-cards-container{
+    padding-top:50px;
+    display:block;
+    width:452px;
+    height:302px;
+    margin: 0 auto;
+    position:relative;
+
+}
+
+article.flash-card {
+    display:block;
+    height:300px;
+    width:450px;
+    border: 1px solid #888;
+    position:absolute;
+    background-color:white;
+}
+
+article.flash-card-selected {
+    z-index: 100;
+}
+
+section.flash-card-side {
+    display: none;
+    overflow: hidden;
+    height:300px;
+    width:450px;
+    padding-top:50px;
+}
+
+section.flash-card-current-side{
+    display:block;
+}
+
+article.flash-card h1, article.flash-card h2 {
+    line-height: 4;
+    vertical-align: middle;
+    text-align:center;
+}

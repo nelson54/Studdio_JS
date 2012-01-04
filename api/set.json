@@ -1,0 +1,33 @@
+{
+    "id": "1",
+    "title": "Card Set Title",
+    "description": "This is a description of the current card set.",
+    "owner": "derek",
+    "terms":
+    [
+      {
+        "added_timestamp": "2011-12-22 15:04:58.849932",
+        "definition": "This is a sample definition.",
+        "term": "Card 1",
+        "id": 4,
+        "modified_timestamp": "2011-12-22 15:04:58.849969",
+        "position": "1"
+      },
+      {
+        "added_timestamp": "2011-12-22 14:11:58.508085",
+        "definition": "This is a sample definition.",
+        "term": "Card 2",
+        "id": 2,
+        "modified_timestamp": "2011-12-22 14:11:58.508150",
+        "position": "2"
+      },
+      {
+        "added_timestamp": "2011-12-22 14:12:06.446520",
+        "definition": "This is a sample definition.",
+        "term": "Card 3",
+        "id": 3,
+        "modified_timestamp": "2011-12-22 14:12:06.446558",
+        "position": "3"
+      }
+    ]
+}
