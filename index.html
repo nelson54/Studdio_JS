@@ -39,6 +39,10 @@
 
   </div>
 
+  <div role="user">
+
+  </div>
+
   <footer>
 
   </footer>
@@ -46,16 +50,27 @@
 </body>
 </html>
 <script id="flash-cards-display-template" type="text/x-handlebars-template">
-  <h1>{{title}}</h1>
-  <p>{{description}}</p>
+  <h1><%= title %></h1>
+  <p><%= description %></p>
   <div class="flash-cards-container">
-  {{#each terms}}
+  <% _.each(terms, function(t) { %>
     <article class="flash-card">
-        <section class="flash-card-side flash-card-front flash-card-current-side"><h1>{{this.term}}</h1></section>
-        <section class="flash-card-side flash-card-back"><h2>{{this.definition}}</h2></section>
+        <section class="flash-card-side flash-card-front flash-card-current-side"><h1><%= t.term %></h1></section>
+        <section class="flash-card-side flash-card-back"><h2><%= t.definition %></h2></section>
     </article>
-  {{/each}}
+  <% }); %>
   </div>
+</script>
+<script id="set-list-display-template" type="text/x-handlebars-template">
+  <h1><%= title %></h1>
+  <ul class="set-list-container">
+  <% _.each(sets, function(s) { %>
+    <li class="set">
+        <h3><%= s.title %></h3>
+        <p><%= s.description %></p>
+    </li>
+  <% }); %>
+  </ul>
 </script>
 <script id="login-form-template" type="text/x-handlebars-template">
   <h1>Login</h1>

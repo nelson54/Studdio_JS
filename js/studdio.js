@@ -16,13 +16,13 @@
             Studdio.LoginView = new Studdio.loginView();
             Studdio.LoginView.render();
         },
-        user: function(user, set){
-
+        user: function(user){
+            Studdio.UserView = new Studdio.user({model: Studdio.User});
         },
         flashcard:function(user, set, card){
             Studdio.Set = new Studdio.dataSet();
             Studdio.Set.url = '/api/set.json?user=' + user + '&set=' + set;
-            Studdio.View = new Studdio.flashCardSetView({model: self.Set});
+            Studdio.View = new Studdio.flashCardSetView({model: Studdio.Set});
 
             if(card)Studdio.View.startAt = card;
             Studdio.View.model.fetch();
@@ -30,11 +30,9 @@
         help: function() {
             return false;
         },
-
         search: function(query, page) {
             return false;
         }
-
     });
 
     //Backbone.history.start({pushState: true});
@@ -70,7 +68,7 @@
         },
 
         render: function( event ){
-            var compiled_template = Handlebars.compile( $("#flash-cards-display-template").html() );
+            var compiled_template = _.template( $("#flash-cards-display-template").html() );
 
             this.el.html(
                 compiled_template(this.model.toJSON()[0])
@@ -140,7 +138,7 @@
         },
 
         render: function( event ){
-            var compiled_template = Handlebars.compile( $("#login-form-template").html() );
+            var compiled_template = _.template( $("#login-form-template").html() );
 
             this.el.html(
                 compiled_template()
@@ -157,6 +155,22 @@
             }
 
             return false;
+        }
+    })
+
+    self.userView = Backbone.View.extend({
+        el: $('div[role="user"]'),
+
+        events: {
+            "click .something": "render"
+        },
+
+        render: function( event ){
+            var compiled_template = _.template( $("#set-list-display-template").html() );
+
+            this.el.html(
+                compiled_template()
+            );
         }
     })
 
